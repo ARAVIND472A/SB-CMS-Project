@@ -1,7 +1,7 @@
 package com.cms.controller;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
+
 
 import java.util.Iterator;
 import java.util.List;
@@ -31,21 +31,21 @@ public class CMSController {
 	CustomerDAO dao;
 	
 	@PostMapping("/PerformInsert")
-	public String PerformInsert(@RequestBody Customer cus)
+	public String performInsert(@RequestBody Customer cus)
 	{
 		dao.save(cus);
 		return "Inserted";
 	}
 	
 	@PutMapping("/PerformUpdate")
-	public String PerformUpdate(@RequestBody Customer cus)
+	public String performUpdate(@RequestBody Customer cus)
 	{
 		dao.save(cus);
 		return "Updated";
 	}
 	
 	@DeleteMapping ("/PerformDelete/{id}")
-	public String PerformDelete(@PathVariable ("id") int id)
+	public String performDelete(@PathVariable ("id") int id)
 	{
 		dao.deleteById(id);
 		return "Deleted";
@@ -53,7 +53,7 @@ public class CMSController {
 	
 	
 	@GetMapping("/ViewAll")
-	public List<Customer> ViewAllPatient()
+	public List<Customer> viewAllPatient()
 	{
 		Iterator<Customer> it=dao.findAll().iterator();
 		ArrayList<Customer> list=new ArrayList<>();
