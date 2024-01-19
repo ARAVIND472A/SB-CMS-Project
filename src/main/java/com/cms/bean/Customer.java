@@ -1,8 +1,7 @@
 package com.cms.bean;
 
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
