@@ -31,21 +31,21 @@ public class CMSController {
 	CustomerDAO dao;
 	
 	@PostMapping("/PerformInsert")
-	public String performInsert(@RequestBody Customer cus)
+	public String PerformInsert(@RequestBody Customer cus)
 	{
 		dao.save(cus);
 		return "Inserted";
 	}
 	
 	@PutMapping("/PerformUpdate")
-	public String performUpdate(@RequestBody Customer cus)
+	public String PerformUpdate(@RequestBody Customer cus)
 	{
 		dao.save(cus);
 		return "Updated";
 	}
 	
 	@DeleteMapping ("/PerformDelete/{id}")
-	public String performDelete(@PathVariable ("id") int id)
+	public String PerformDelete(@PathVariable ("id") int id)
 	{
 		dao.deleteById(id);
 		return "Deleted";
@@ -53,7 +53,7 @@ public class CMSController {
 	
 	
 	@GetMapping("/ViewAll")
-	public List<Customer> viewAllPatient()
+	public List<Customer> ViewAllPatient()
 	{
 		Iterator<Customer> it=dao.findAll().iterator();
 		ArrayList<Customer> list=new ArrayList<>();
